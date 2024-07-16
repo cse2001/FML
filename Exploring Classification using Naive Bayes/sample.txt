@@ -1,0 +1,42 @@
+you will implement Naive Bayes on a toy dataset for classification task.Training Data contain (X1, ...,X10) coordinates of points and class label in the last column.You must go through comments of each function to understand their expected behavior.Each datapoint consists of 10 dimension, which we label as (X1,X2, ..,X10) and class label from (0, 1, 2).
+1. (X1,X2) are drawn independently from two dierent univariate Gaussian distributions.
+2. (X3,X4) are random variables drawn independently from two different Bernoulli Distributions
+3. (X5,X6) are random variables drawn independently from two different Laplace Distributions
+4. (X7,X8) are random variables drawn independently from two different Exponential Distribution
+5. (X9,X10) are random variables drawn independently from two different Multinomial Distributions
+Your goal is to calculate Maximum Likelihood estimators for each of these distributions and create a naive
+Bayes classifier with an appropriate prior to classify these points. You are free to code up MLE’s for all these distributions yourself. You will need to return the following parameters for each of these classes:1. Gaussian : (μ, σ^2)
+2. Bernoulli : p
+3. Laplace : (μ, b)
+4. Exponential : λ
+5. Multinomial : [p1, p2, .., pk]                                   Now complete code for the "fit","predict" and "getParams" functions  below. class NaiveBayes:
+    def fit(self, X, y):
+        """
+        X : np.array of shape (n,10)
+        y : np.array of shape (n,)
+        Create a variable to store number of unique classes in the dataset.
+        Assume Prior for each class to be ratio of number of data points in that class to total number of data points.
+        Fit a distribution for each feature for each class.
+        Store the parameters of the distribution in suitable data structure, for example you could create a class for each distribution and store the parameters in the class object.
+        You can create a separate function for fitting each distribution in its and call it here."""
+        def predict(self, X):
+        """
+        X : np.array of shape (n,10)
+        Calculate the posterior probability using the parameters of the distribution calculated in fit function.
+        Take care of underflow errors suitably (Hint: Take log of probabilities)
+        Return an np.array() of predictions where predictions[i] is the predicted class for ith data point in X.
+        It is implied that prediction[i] is the class that maximizes posterior probability for ith data point in X.
+        You can create a separate function for calculating posterior probability and call it here."""
+    def getParams(self):
+        """
+        Return your calculated priors and parameters for all the classes in the form of dictionary that will be used for evaluation
+        Please don't change the dictionary names
+        Here is what the output would look like:
+        priors = {"0":0.2,"1":0.3,"2":0.5}, gaussian = {"0":[mean_x1,mean_x2,var_x1,var_x2],"1":[mean_x1,mean_x2,var_x1,var_x2],"2":[mean_x1,mean_x2,var_x1,var_x2]}, bernoulli = {"0":[p_x3,p_x4],"1":[p_x3,p_x4],"2":[p_x3,p_x4]}, laplace = {"0":[mu_x5,mu_x6,b_x5,b_x6],"1":[mu_x5,mu_x6,b_x5,b_x6],"2":[mu_x5,mu_x6,b_x5,b_x6]}, exponential = {"0":[lambda_x7,lambda_x8],"1":[lambda_x7,lambda_x8],"2":[lambda_x7,lambda_x8]}, multinomial = {"0":[[p0_x9,...,p4_x9],[p0_x10,...,p7_x10]],"1":[[p0_x9,...,p4_x9],[p0_x10,...,p7_x10]],"2":[[p0_x9,...,p4_x9],[p0_x10,...,p7_x10]]}
+        """         """Start of your code"""                    priors = {}
+        guassian = {}
+        bernoulli = {}
+        laplace = {}
+        exponential = {}
+        multinomial = {}
+        return (priors, guassian, bernoulli, laplace, exponential, multinomial)  """End of code"""
